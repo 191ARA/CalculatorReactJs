@@ -1,0 +1,52 @@
+Documentation for Calculator
+
+Calculator is a calculator developed using React. It supports basic mathematical operations, keyboard input handling, and special functions such as squaring, cubing, and calculating the reciprocal of a number.
+
+Technologies Used
+React: For state management and UI rendering.
+Tailwind CSS: For styling UI elements.
+
+Functionality
+
+State
+
+input (useState): Stores the current expression entered by the user.
+
+Effects
+useEffect: Listens for keypress events and triggers corresponding handlers when numeric or operator keys are pressed.
+
+Main Functions
+
+handleKeyPress(event)
+Filters key presses, allowing only valid ones (0-9, +, -, *, /, ^, Enter, Backspace).
+Calls handleClick("=") when Enter is pressed.
+Removes the last character from input when Backspace is pressed.
+
+isValidInput(value)
+Checks whether a character can be added to input.
+Prevents consecutive operators from being entered.
+
+handleClick(value)
+Performs different actions depending on the passed value:
+C: Clears input.
+=: Evaluates the expression using eval(), replacing ^ with **.
+x²: Squares the current value.
+x³: Cubes the current value.
+1/x: Calculates the reciprocal.
+Any other valid value is added to input.
+Markup Structure
+Main Wrapper: A div with classes: flex flex-col items-center bg-gray-800 p-6 rounded-2xl shadow-lg w-72.
+Input Display: A div with classes: mb-4 p-4 bg-black rounded text-right text-2xl h-16 flex items-center justify-end.
+Calculator Buttons: Arranged in a grid (grid grid-cols-4 gap-2). Each button has classes: bg-gray-700 p-4 rounded-lg text-white text-xl hover:bg-gray-600.
+C Button: Highlighted in red with bg-red-600.
+
+Markup
+
+The usual packaging for packaging flex flex products is coll-central bg-gray-800 p-6, rounded-2xl, shadow-LG W-72.
+Input description: partition sizes mb-4 p-4 bg-black text with rounded corners -text on the right-2xl h-16 flexible elements - center alignment -end.
+The calculator buttons are marked in a grid-cols-4, gap-2, each button has a size with classes: bg-gray-700, P-4, with rounded edges-LG,text-white, text-xl, hover the cursor:bg-grey-600.
+A bottle with an accentuated reddish hue bg-red-600.
+
+Rendering
+The calculator is rendered into the root element using:
+ReactDOM.createRoot(document.getElementById("root")).render(<Calculator />);
